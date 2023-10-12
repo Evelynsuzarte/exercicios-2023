@@ -1,9 +1,11 @@
 <?php
 
 namespace Chuva\Php\WebScrapping;
+
 use Chuva\Php\WebScrapping\Scrapper;
 
-libxml_use_internal_errors(true);
+libxml_use_internal_errors(TRUE);
+
 /**
  * Runner for the Webscrapping exercice.
  */
@@ -20,5 +22,5 @@ class Main {
     print_r($scrapper->buscar($dom));
     $scrapper->escreverArquivo();
   }
-  
+
 }

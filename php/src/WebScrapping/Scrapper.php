@@ -22,14 +22,14 @@ class Scrapper {
 
   /**
    * Declaração de variavel de quantidade de autor por obra.
-   * 
+   *
    * @var array
    */
   public $nAutorObra = [];
 
   /**
    * Declaração de variavel de lista de obras.
-   * 
+   *
    * @var array
    */
   public $listaObras = [];

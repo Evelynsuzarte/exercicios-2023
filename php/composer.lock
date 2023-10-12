@@ -518,12 +518,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "7566b4d89de1d08d2a8ad85910507d6633a35d28"
+                "reference": "8dfb63220e1fd5cfcce07f20bc24f75a5269597c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/7566b4d89de1d08d2a8ad85910507d6633a35d28",
-                "reference": "7566b4d89de1d08d2a8ad85910507d6633a35d28",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/8dfb63220e1fd5cfcce07f20bc24f75a5269597c",
+                "reference": "8dfb63220e1fd5cfcce07f20bc24f75a5269597c",
                 "shasum": ""
             },
             "require": {
@@ -568,7 +568,7 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2023-09-11T11:08:03+00:00"
+            "time": "2023-10-12T00:46:56+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

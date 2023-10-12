@@ -1,7 +1,9 @@
 <?php
 
 namespace Chuva\Php\WebScrapping;
+use Chuva\Php\WebScrapping\Scrapper;
 
+libxml_use_internal_errors(true);
 /**
  * Runner for the Webscrapping exercice.
  */
@@ -14,10 +16,9 @@ class Main {
     $dom = new \DOMDocument('1.0', 'utf-8');
     $dom->loadHTMLFile(__DIR__ . '/../../assets/origin.html');
 
-    $data = (new Scrapper())->scrap($dom);
-
-    // Write your logic to save the output file bellow.
-    print_r($data);
+    $scrapper = (new Scrapper());
+    print_r($scrapper->buscar($dom));
+    $scrapper->escreverArquivo();
   }
-
+  
 }

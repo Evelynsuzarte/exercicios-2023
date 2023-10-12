@@ -2,9 +2,6 @@
 
 namespace Chuva\Php\WebScrapping;
 
-use Box\Spout\Common\Entity\Row;
-use Box\Spout\Common\Type;
-use Box\Spout\Writer\Common\Creator\Style\StyleBuilder;
 use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
 use Chuva\Php\WebScrapping\Entity\Paper;
 use Chuva\Php\WebScrapping\Entity\Person;
@@ -16,18 +13,23 @@ libxml_use_internal_errors(TRUE);
  */
 class Scrapper {
 
-  /** 
+  /**
    * Variavel para uso do DOM.
-   * 
-   * @var DOMNode
+   *
+   * @var 
    */
   private $item;
 
   /**
-   * Declaração de variavel.
-   *
-   * */
+   * Declaração de variavel de quantidade de autor por obra.
+   * @var array
+   */
   public $nAutorObra = [];
+
+  /**
+   * Declaração de variavel de lista de obras.
+   * @var array
+   */
   public $listaObras = [];
 
   /**
@@ -37,8 +39,7 @@ class Scrapper {
     // Declaração de variáveis.
     $titulos = $tipos = $id = $autores = $instituicao = $lista_autores = [];
     $aux = $nova_obra = NULL;
-    
-    
+
     $xpath = new \DOMXPath($dom);
 
     // Busca de id.
@@ -62,7 +63,7 @@ class Scrapper {
     // Busca de instituição.
     $xpath_busca_instituicao = $xpath->query('//div[@class="authors"]/span[@title]');
     foreach ($xpath_busca_instituicao as $item) {
-    array_push($instituicao, $item->getAttribute('title'));
+      array_push($instituicao, $item->getAttribute('title'));
     }
 
     // Busca de atores.
@@ -72,16 +73,16 @@ class Scrapper {
       for ($i = 0; $i < count($partes) - 1; $i++) {
         array_push($autores, $partes[$i]);
       }
-      array_push($this->nAutorObra, count($partes) - 1);   
+      array_push($this->nAutorObra, count($partes) - 1);
       $partes = [];
     }
 
     // Criação de objetos.
     $ultimo = $j = $somador = 0;
     $quantidade_obras = count($id);
-    for ($i = 0; $i < $quantidade_obras; $i++) {                        
-      $quant_autores = (int)$this->nAutorObra[$i];
-      for ($j = 0; $j < $quant_autores; $j++) {                                  
+    for ($i = 0; $i < $quantidade_obras; $i++) {
+      $quant_autores = (int) $this->nAutorObra[$i];
+      for ($j = 0; $j < $quant_autores; $j++) {
         $aux = new Person($autores[$j + $ultimo], $instituicao[$j + $ultimo]);
         array_push($lista_autores, $aux);
         $somador = $somador + 1;

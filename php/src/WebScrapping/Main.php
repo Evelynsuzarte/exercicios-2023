@@ -2,7 +2,6 @@
 
 namespace Chuva\Php\WebScrapping;
 
-use Chuva\Php\WebScrapping\Scrapper;
 
 libxml_use_internal_errors(TRUE);
 

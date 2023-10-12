@@ -16,18 +16,20 @@ class Scrapper {
   /**
    * Variavel para uso do DOM.
    *
-   * @var 
+   * @var object
    */
   private $item;
 
   /**
    * Declaração de variavel de quantidade de autor por obra.
+   * 
    * @var array
    */
   public $nAutorObra = [];
 
   /**
    * Declaração de variavel de lista de obras.
+   * 
    * @var array
    */
   public $listaObras = [];

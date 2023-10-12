@@ -2,26 +2,24 @@
 
 namespace Chuva\Php\WebScrapping;
 
+use Box\Spout\Common\Entity\Row;
+use Box\Spout\Common\Type;
+use Box\Spout\Writer\Common\Creator\Style\StyleBuilder;
+use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
 use Chuva\Php\WebScrapping\Entity\Paper;
 use Chuva\Php\WebScrapping\Entity\Person;
 
-use Box\Spout\Writer\Common\Creator\WriterEntityFactory;
-use Box\Spout\Writer\Common\Creator\Style\StyleBuilder;
-use Box\Spout\Common\Entity\Row;
-use Box\Spout\Common\Type;
-
-
-libxml_use_internal_errors(true);
+libxml_use_internal_errors(TRUE);
 /**
  * Does the scrapping of a webpage.
  */
 class Scrapper {
 
-    /** @var DOMNode*/
-    private $item;
+  /** @var DOMNode*/
+  private $item;
 
-    public $n_autor_obra = [];
-    public $lista_obras = [];
+  public $n_autor_obra = [];
+  public $lista_obras = [];
 
   /**
    * Loads paper information from the HTML and returns the array with the data.

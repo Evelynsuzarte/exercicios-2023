@@ -18,7 +18,7 @@ class ScrapperTest extends TestCase {
     @$dom->loadHTML('<html><body><p>Chove Chuva</p></body></html>');
 
     $scrapper = new Scrapper();
-    $results = $scrapper->scrap($dom);
+    $results = $scrapper->buscar($dom);
 
     $this->assertIsArray($results);
   }
